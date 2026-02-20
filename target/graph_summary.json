@@ -1,1 +1,0 @@
-{"_invocation_id": "f177414f-10b2-476a-88e1-c0932ed9031c", "linked": {"0": {"name": "source.dbt_works.raw.users_raw", "type": "source", "succ": [1]}, "1": {"name": "model.dbt_works.stg_test_users_raw", "type": "model"}}}
