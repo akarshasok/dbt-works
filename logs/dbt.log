@@ -1,0 +1,437 @@
+[0m12:42:06.706524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBD95D2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBF8EBED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBF8EBB10>]}
+
+
+============================== 12:42:06.714125 | 0efbe0b8-32ba-47f0-b17f-93f3dd521007 ==============================
+[0m12:42:06.714125 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:42:06.715192 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:42:07.152303 [info ] [MainThread]: dbt version: 1.11.6
+[0m12:42:07.154139 [info ] [MainThread]: python version: 3.13.12
+[0m12:42:07.155388 [info ] [MainThread]: python path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Scripts\python.exe
+[0m12:42:07.157082 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m12:42:07.158692 [info ] [MainThread]: Using profiles dir at C:\Users\Sandhya Subramaniam\.dbt
+[0m12:42:07.160244 [info ] [MainThread]: Using profiles.yml file at C:\Users\Sandhya Subramaniam\.dbt\profiles.yml
+[0m12:42:07.161906 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml
+[0m12:42:07.165588 [info ] [MainThread]: Configuration:
+[0m12:42:07.167050 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m12:42:07.168518 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:42:07.170071 [info ] [MainThread]: Required dependencies:
+[0m12:42:07.171818 [debug] [MainThread]: Executing "git --help"
+[0m12:42:07.245539 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:42:07.246215 [debug] [MainThread]: STDERR: "b''"
+[0m12:42:07.246705 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:42:07.247443 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m12:42:07.248063 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m12:42:07.248666 [info ] [MainThread]: dbt looked for a profiles.yml file in C:\Users\Sandhya Subramaniam\.dbt\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m12:42:07.249341 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml> not found
+
+[0m12:42:07.250709 [debug] [MainThread]: Command `dbt debug` failed at 12:42:07.250573 after 0.77 seconds
+[0m12:42:07.251095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBF9E0050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBF7DA450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024CBF72BDF0>]}
+[0m12:42:07.251499 [debug] [MainThread]: Flushing usage events
+[0m12:42:08.074753 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:44:43.983309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC2C55D2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC2E4EFED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC2E4EFB10>]}
+
+
+============================== 12:44:43.990624 | 491254ee-e76b-492b-8f34-cc81168d8e5f ==============================
+[0m12:44:43.990624 [info ] [MainThread]: Running with dbt=1.11.6
+[0m12:44:43.991535 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init ak_data_warehouse', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m12:44:44.032104 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Sandhya Subramaniam\.dbt
+[0m12:44:44.053057 [debug] [MainThread]: Starter project path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\include\starter_project
+[0m12:44:44.106130 [info ] [MainThread]: 
+Your new dbt project "ak_data_warehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:44:44.107241 [info ] [MainThread]: Setting up your profile.
+[0m12:48:32.861754 [error] [MainThread]: Encountered an error:
+
+[0m12:48:32.873428 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:48:32.877894 [debug] [MainThread]: Command `dbt init` failed at 12:48:32.877549 after 229.13 seconds
+[0m12:48:32.878751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC54B6FA80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC54B80710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FC54BCC160>]}
+[0m12:48:32.880280 [debug] [MainThread]: Flushing usage events
+[0m12:48:33.640226 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:20:26.159157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260D965D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260DB5F3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260DB5F3B10>]}
+
+
+============================== 13:20:26.168769 | 34b44318-de6e-4ff1-921c-7541a4b40b69 ==============================
+[0m13:20:26.168769 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:20:26.170270 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m13:20:26.207225 [info ] [MainThread]: dbt version: 1.11.6
+[0m13:20:26.208223 [info ] [MainThread]: python version: 3.13.12
+[0m13:20:26.208713 [info ] [MainThread]: python path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Scripts\python.exe
+[0m13:20:26.209157 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:20:38.457664 [info ] [MainThread]: Using profiles dir at C:\Users\Sandhya Subramaniam\.dbt
+[0m13:20:38.458453 [info ] [MainThread]: Using profiles.yml file at C:\Users\Sandhya Subramaniam\.dbt\profiles.yml
+[0m13:20:38.459383 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml
+[0m13:20:38.460122 [info ] [MainThread]: adapter type: bigquery
+[0m13:20:38.460759 [info ] [MainThread]: adapter version: 1.11.0
+[0m13:20:38.587113 [info ] [MainThread]: Configuration:
+[0m13:20:38.588170 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:20:38.588809 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:20:38.589499 [info ] [MainThread]: Required dependencies:
+[0m13:20:38.590238 [debug] [MainThread]: Executing "git --help"
+[0m13:20:38.664217 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:20:38.664861 [debug] [MainThread]: STDERR: "b''"
+[0m13:20:38.666032 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:20:38.667083 [info ] [MainThread]: Connection:
+[0m13:20:38.667916 [info ] [MainThread]:   method: oauth
+[0m13:20:38.668572 [info ] [MainThread]:   database: ak-data-warehouse
+[0m13:20:38.669126 [info ] [MainThread]:   execution_project: ak-data-warehouse
+[0m13:20:38.669567 [info ] [MainThread]:   schema: dbt_akarsh_staging_layer
+[0m13:20:38.670042 [info ] [MainThread]:   location: US
+[0m13:20:38.670558 [info ] [MainThread]:   priority: interactive
+[0m13:20:38.671020 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:20:38.671498 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:20:38.671928 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:20:38.672405 [info ] [MainThread]:   job_retries: 1
+[0m13:20:38.672994 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:20:38.673543 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m13:20:38.674047 [info ] [MainThread]:   timeout_seconds: None
+[0m13:20:38.674478 [info ] [MainThread]:   client_id: None
+[0m13:20:38.674964 [info ] [MainThread]:   token_uri: None
+[0m13:20:38.675380 [info ] [MainThread]:   compute_region: None
+[0m13:20:38.675792 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:20:38.676278 [info ] [MainThread]:   gcs_bucket: None
+[0m13:20:38.676824 [info ] [MainThread]:   dataproc_batch: None
+[0m13:20:38.678005 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m13:20:39.505585 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:20:39.506092 [debug] [MainThread]: On debug: select 1 as id
+[0m13:20:39.506449 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:20:51.872973 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m13:20:51.873779 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m13:20:51.874171 [debug] [MainThread]: BigQuery adapter: Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[0m13:20:51.874559 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m13:20:51.875652 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:20:51.876827 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m13:20:51.879925 [debug] [MainThread]: Command `dbt debug` failed at 13:20:51.879567 after 26.09 seconds
+[0m13:20:51.881034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026101E46C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026103020830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026101CA9040>]}
+[0m13:20:51.881989 [debug] [MainThread]: Flushing usage events
+[0m13:20:52.664210 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:32:46.931597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3AA37D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3AC3F3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3AC3F3B10>]}
+
+
+============================== 13:32:46.946409 | fa2fac10-cce7-45e4-8b43-67d19c208a7b ==============================
+[0m13:32:46.946409 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:32:46.947637 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m13:32:46.995781 [info ] [MainThread]: dbt version: 1.11.6
+[0m13:32:46.996844 [info ] [MainThread]: python version: 3.13.12
+[0m13:32:46.997475 [info ] [MainThread]: python path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Scripts\python.exe
+[0m13:32:46.998093 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:32:59.228040 [info ] [MainThread]: Using profiles dir at C:\Users\Sandhya Subramaniam\.dbt
+[0m13:32:59.228956 [info ] [MainThread]: Using profiles.yml file at C:\Users\Sandhya Subramaniam\.dbt\profiles.yml
+[0m13:32:59.229518 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml
+[0m13:32:59.230085 [info ] [MainThread]: adapter type: bigquery
+[0m13:32:59.230624 [info ] [MainThread]: adapter version: 1.11.0
+[0m13:32:59.346946 [info ] [MainThread]: Configuration:
+[0m13:32:59.347923 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:32:59.348475 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:32:59.348911 [info ] [MainThread]: Required dependencies:
+[0m13:32:59.349375 [debug] [MainThread]: Executing "git --help"
+[0m13:32:59.412361 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:32:59.413001 [debug] [MainThread]: STDERR: "b''"
+[0m13:32:59.413344 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:32:59.414146 [info ] [MainThread]: Connection:
+[0m13:32:59.414737 [info ] [MainThread]:   method: oauth
+[0m13:32:59.415273 [info ] [MainThread]:   database: ak-data-warehouse
+[0m13:32:59.415705 [info ] [MainThread]:   execution_project: ak-data-warehouse
+[0m13:32:59.416270 [info ] [MainThread]:   schema: dbt_akarsh_staging_layer
+[0m13:32:59.416769 [info ] [MainThread]:   location: US
+[0m13:32:59.417233 [info ] [MainThread]:   priority: interactive
+[0m13:32:59.417682 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:32:59.418144 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:32:59.418572 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:32:59.418986 [info ] [MainThread]:   job_retries: 1
+[0m13:32:59.419584 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:32:59.420029 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m13:32:59.420662 [info ] [MainThread]:   timeout_seconds: None
+[0m13:32:59.421101 [info ] [MainThread]:   client_id: None
+[0m13:32:59.421587 [info ] [MainThread]:   token_uri: None
+[0m13:32:59.422128 [info ] [MainThread]:   compute_region: None
+[0m13:32:59.422731 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:32:59.423199 [info ] [MainThread]:   gcs_bucket: None
+[0m13:32:59.423648 [info ] [MainThread]:   dataproc_batch: None
+[0m13:32:59.424499 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m13:33:00.292646 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:33:00.293446 [debug] [MainThread]: On debug: select 1 as id
+[0m13:33:00.294051 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:33:04.606248 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:472e5072-3398-4ef4-a258-df693a5ede3a&page=queryresults
+[0m13:33:04.842810 [debug] [MainThread]: SQL status: OK in 0.236 seconds
+[0m13:33:13.442046 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:33:13.443273 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:33:13.445202 [debug] [MainThread]: Command `dbt debug` succeeded at 13:33:13.444952 after 26.75 seconds
+[0m13:33:13.445828 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:33:13.446484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3D2956C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3D2D1CA70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E3D2BB4490>]}
+[0m13:33:13.447195 [debug] [MainThread]: Flushing usage events
+[0m13:33:14.297808 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:34:52.334578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFB665D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFB85F3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFB85F3B10>]}
+
+
+============================== 13:34:52.343622 | 5ddc2db6-35c4-4115-ae2c-12bfb23f4690 ==============================
+[0m13:34:52.343622 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:34:52.345213 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m13:34:52.380412 [info ] [MainThread]: dbt version: 1.11.6
+[0m13:34:52.381784 [info ] [MainThread]: python version: 3.13.12
+[0m13:34:52.382892 [info ] [MainThread]: python path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Scripts\python.exe
+[0m13:34:52.383457 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:35:05.108543 [info ] [MainThread]: Using profiles dir at C:\Users\Sandhya Subramaniam\.dbt
+[0m13:35:05.109641 [info ] [MainThread]: Using profiles.yml file at C:\Users\Sandhya Subramaniam\.dbt\profiles.yml
+[0m13:35:05.110257 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml
+[0m13:35:05.110851 [info ] [MainThread]: adapter type: bigquery
+[0m13:35:05.111364 [info ] [MainThread]: adapter version: 1.11.0
+[0m13:35:05.239406 [info ] [MainThread]: Configuration:
+[0m13:35:05.240458 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:35:05.241249 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:35:05.241886 [info ] [MainThread]: Required dependencies:
+[0m13:35:05.242571 [debug] [MainThread]: Executing "git --help"
+[0m13:35:05.303683 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:35:05.304497 [debug] [MainThread]: STDERR: "b''"
+[0m13:35:05.304992 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:35:05.305909 [info ] [MainThread]: Connection:
+[0m13:35:05.306665 [info ] [MainThread]:   method: oauth
+[0m13:35:05.307241 [info ] [MainThread]:   database: ak-data-warehouse
+[0m13:35:05.307883 [info ] [MainThread]:   execution_project: ak-data-warehouse
+[0m13:35:05.308499 [info ] [MainThread]:   schema: dbt_akarsh_staging_layer
+[0m13:35:05.309208 [info ] [MainThread]:   location: US
+[0m13:35:05.309898 [info ] [MainThread]:   priority: interactive
+[0m13:35:05.310478 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:35:05.311203 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:35:05.311944 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:35:05.312554 [info ] [MainThread]:   job_retries: 1
+[0m13:35:05.313062 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:35:05.313518 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m13:35:05.313952 [info ] [MainThread]:   timeout_seconds: None
+[0m13:35:05.314396 [info ] [MainThread]:   client_id: None
+[0m13:35:05.314824 [info ] [MainThread]:   token_uri: None
+[0m13:35:05.315305 [info ] [MainThread]:   compute_region: None
+[0m13:35:05.315744 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:35:05.316272 [info ] [MainThread]:   gcs_bucket: None
+[0m13:35:05.316775 [info ] [MainThread]:   dataproc_batch: None
+[0m13:35:05.317946 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m13:35:06.204537 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:35:06.205075 [debug] [MainThread]: On debug: select 1 as id
+[0m13:35:06.205451 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:35:09.863680 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:b208050c-902e-4920-9cf9-018f79b1ae52&page=queryresults
+[0m13:35:10.054242 [debug] [MainThread]: SQL status: OK in 0.189 seconds
+[0m13:35:10.298199 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:35:10.299548 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:35:10.301746 [debug] [MainThread]: Command `dbt debug` succeeded at 13:35:10.301382 after 18.18 seconds
+[0m13:35:10.302361 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:35:10.302994 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFDEF5AC40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFE001CA70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DFDEEA8490>]}
+[0m13:35:10.303715 [debug] [MainThread]: Flushing usage events
+[0m13:35:11.083772 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:35:54.759658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0F7B5D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0F9AF3ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0F9AF3B10>]}
+
+
+============================== 13:35:54.766854 | dfeab20f-fbff-4171-beee-9bbd506186ac ==============================
+[0m13:35:54.766854 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:35:54.768278 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m13:35:54.796426 [info ] [MainThread]: dbt version: 1.11.6
+[0m13:35:54.797274 [info ] [MainThread]: python version: 3.13.12
+[0m13:35:54.797917 [info ] [MainThread]: python path: C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\.venv\Scripts\python.exe
+[0m13:35:54.798518 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m13:36:06.560614 [info ] [MainThread]: Using profiles dir at C:\Users\Sandhya Subramaniam\.dbt
+[0m13:36:06.561563 [info ] [MainThread]: Using profiles.yml file at C:\Users\Sandhya Subramaniam\.dbt\profiles.yml
+[0m13:36:06.562148 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\dbt_project.yml
+[0m13:36:06.562729 [info ] [MainThread]: adapter type: bigquery
+[0m13:36:06.563226 [info ] [MainThread]: adapter version: 1.11.0
+[0m13:36:06.685609 [info ] [MainThread]: Configuration:
+[0m13:36:06.686746 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:36:06.687394 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:36:06.687923 [info ] [MainThread]: Required dependencies:
+[0m13:36:06.688454 [debug] [MainThread]: Executing "git --help"
+[0m13:36:06.749736 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:36:06.750369 [debug] [MainThread]: STDERR: "b''"
+[0m13:36:06.750762 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:36:06.751501 [info ] [MainThread]: Connection:
+[0m13:36:06.752154 [info ] [MainThread]:   method: oauth
+[0m13:36:06.752844 [info ] [MainThread]:   database: ak-data-warehouse
+[0m13:36:06.753446 [info ] [MainThread]:   execution_project: ak-data-warehouse
+[0m13:36:06.754147 [info ] [MainThread]:   schema: dbt_akarsh_staging_layer
+[0m13:36:06.754668 [info ] [MainThread]:   location: US
+[0m13:36:06.755135 [info ] [MainThread]:   priority: interactive
+[0m13:36:06.755668 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:36:06.756184 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:36:06.756770 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:36:06.757423 [info ] [MainThread]:   job_retries: 1
+[0m13:36:06.758011 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:36:06.758567 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m13:36:06.759111 [info ] [MainThread]:   timeout_seconds: None
+[0m13:36:06.759653 [info ] [MainThread]:   client_id: None
+[0m13:36:06.760121 [info ] [MainThread]:   token_uri: None
+[0m13:36:06.760561 [info ] [MainThread]:   compute_region: None
+[0m13:36:06.760991 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:36:06.761604 [info ] [MainThread]:   gcs_bucket: None
+[0m13:36:06.762120 [info ] [MainThread]:   dataproc_batch: None
+[0m13:36:06.762967 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m13:36:07.589106 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:36:07.589655 [debug] [MainThread]: On debug: select 1 as id
+[0m13:36:07.590068 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:36:11.208832 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:2d78f412-cd6d-4f65-b2bb-ed5ec61b9caf&page=queryresults
+[0m13:36:11.382736 [debug] [MainThread]: SQL status: OK in 0.173 seconds
+[0m13:36:11.646023 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:36:11.647469 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:36:11.650305 [debug] [MainThread]: Command `dbt debug` succeeded at 13:36:11.649962 after 17.09 seconds
+[0m13:36:11.651100 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:36:11.651965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0A1556C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0A1624A70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D0A14A4490>]}
+[0m13:36:11.652946 [debug] [MainThread]: Flushing usage events
+[0m13:36:12.452766 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:45:10.777701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176F195D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176F38F7ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176F38F7B10>]}
+
+
+============================== 13:45:10.785914 | f177414f-10b2-476a-88e1-c0932ed9031c ==============================
+[0m13:45:10.785914 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:45:10.786984 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt run --select stg_test_users_raw', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m13:45:23.292856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176F1BF1BA0>]}
+[0m13:45:23.359355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017699EB5D00>]}
+[0m13:45:23.360328 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m13:45:24.222689 [debug] [MainThread]: checksum: c8b6b59961f1a44cdae45abf5547d0e7461bf6d514dde67ea6b1b10a452c5f5b, vars: {}, profile: , target: dev, version: 1.11.6
+[0m13:45:24.224670 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:45:24.225915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017699E98C50>]}
+[0m13:45:29.569044 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.dbt_works.audit
+- models.dbt_works.analytics
+- models.dbt_works.marts
+[0m13:45:29.578952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B5423F0>]}
+[0m13:45:29.651042 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\manifest.json
+[0m13:45:29.656429 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\semantic_manifest.json
+[0m13:45:29.812278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B83F230>]}
+[0m13:45:29.813283 [info ] [MainThread]: Found 1 model, 1 source, 539 macros
+[0m13:45:29.814714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B590D50>]}
+[0m13:45:29.817932 [info ] [MainThread]: 
+[0m13:45:29.819202 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:45:29.820227 [info ] [MainThread]: 
+[0m13:45:29.822547 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:45:29.825112 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_ak-data-warehouse'
+[0m13:45:29.825767 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:45:33.620413 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ak-data-warehouse, now create_ak-data-warehouse_dbt_akarsh_staging_layer)
+[0m13:45:33.623565 [debug] [ThreadPool]: Creating schema "database: "ak-data-warehouse"
+schema: "dbt_akarsh_staging_layer"
+"
+[0m13:45:33.636043 [debug] [ThreadPool]: On create_ak-data-warehouse_dbt_akarsh_staging_layer: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "dbt_works", "target_name": "dev", "connection_name": "create_ak-data-warehouse_dbt_akarsh_staging_layer"} */
+create schema if not exists `ak-data-warehouse`.`dbt_akarsh_staging_layer`
+  
+[0m13:45:33.636858 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:45:34.623405 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:343555d2-a457-484a-a27c-a92bc5283641&page=queryresults
+[0m13:45:35.357922 [debug] [ThreadPool]: SQL status: OK in 0.734 seconds
+[0m13:45:35.470084 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_ak-data-warehouse_dbt_akarsh_staging_layer'
+[0m13:45:35.470845 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:45:36.248223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769BBBC410>]}
+[0m13:45:36.249448 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:45:36.273155 [debug] [Thread-1 (]: Began running node model.dbt_works.stg_test_users_raw
+[0m13:45:36.274457 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_akarsh_staging_layer.stg_test_users_raw ........ [RUN]
+[0m13:45:36.276219 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_works.stg_test_users_raw'
+[0m13:45:36.277085 [debug] [Thread-1 (]: Began compiling node model.dbt_works.stg_test_users_raw
+[0m13:45:36.288677 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_works.stg_test_users_raw"
+[0m13:45:36.292092 [debug] [Thread-1 (]: Began executing node model.dbt_works.stg_test_users_raw
+[0m13:45:36.323032 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_works.stg_test_users_raw"
+[0m13:45:36.326352 [debug] [Thread-1 (]: On model.dbt_works.stg_test_users_raw: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "dbt_works", "target_name": "dev", "node_id": "model.dbt_works.stg_test_users_raw"} */
+
+
+  create or replace view `ak-data-warehouse`.`dbt_akarsh_staging_layer`.`stg_test_users_raw`
+  OPTIONS()
+  as select
+    id,
+    name,
+    created_at
+from `ak-data-warehouse`.`raw_data`.`users_raw`;
+
+
+[0m13:45:36.326955 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:45:37.377685 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:aaac6ef1-bdeb-43a5-b7c9-9324cd64615d&page=queryresults
+[0m13:45:37.954454 [debug] [Thread-1 (]: SQL status: OK in 0.576 seconds
+[0m13:45:37.993068 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f177414f-10b2-476a-88e1-c0932ed9031c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769BADD0D0>]}
+[0m13:45:37.994046 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_akarsh_staging_layer.stg_test_users_raw ... [[32mCREATE VIEW (0 processed)[0m in 1.70s]
+[0m13:45:37.995538 [debug] [Thread-1 (]: Finished running node model.dbt_works.stg_test_users_raw
+[0m13:45:38.000257 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:45:38.001040 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:45:38.001356 [debug] [MainThread]: Connection 'create_ak-data-warehouse_dbt_akarsh_staging_layer' was properly closed.
+[0m13:45:38.001599 [debug] [MainThread]: Connection 'list_ak-data-warehouse_dbt_akarsh_staging_layer' was properly closed.
+[0m13:45:38.001854 [debug] [MainThread]: Connection 'model.dbt_works.stg_test_users_raw' was properly closed.
+[0m13:45:38.002123 [info ] [MainThread]: 
+[0m13:45:38.003091 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 8.18 seconds (8.18s).
+[0m13:45:38.005492 [debug] [MainThread]: Command end result
+[0m13:45:38.029324 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\manifest.json
+[0m13:45:38.033085 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\semantic_manifest.json
+[0m13:45:38.041547 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\run_results.json
+[0m13:45:38.042170 [info ] [MainThread]: 
+[0m13:45:38.043217 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:45:38.043780 [info ] [MainThread]: 
+[0m13:45:38.044502 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m13:45:38.046334 [debug] [MainThread]: Command `dbt run` succeeded at 13:45:38.046155 after 27.49 seconds
+[0m13:45:38.046784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769BBCD950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B8DFAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B747F50>]}
+[0m13:45:38.047203 [debug] [MainThread]: Flushing usage events
+[0m13:45:38.883902 [debug] [MainThread]: An error was encountered while trying to flush usage events

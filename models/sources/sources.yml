@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: ak-data-warehouse
+    schema: raw_data
+    tables:
+      - name: users_raw
+        description: "Dummy users table for testing"

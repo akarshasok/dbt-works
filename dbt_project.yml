@@ -1,0 +1,32 @@
+name: dbt_works
+version: 1.0.0
+config-version: 2
+
+profile: dbt_works
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  dbt_works:
+    staging:
+      +schema: staging_layer
+      +materialized: view
+
+    marts:
+      +schema: mart_layer
+      +materialized: table
+
+    analytics:
+      +schema: analytics_layer
+      +materialized: table
+
+    audit:
+      +schema: audit_layer
+      +materialized: view
