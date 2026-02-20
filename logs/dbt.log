@@ -435,3 +435,81 @@ from `ak-data-warehouse`.`raw_data`.`users_raw`;
 [0m13:45:38.046784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769BBCD950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B8DFAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001769B747F50>]}
 [0m13:45:38.047203 [debug] [MainThread]: Flushing usage events
 [0m13:45:38.883902 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:34.918903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002888C75D160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002888E6F7ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002888E6F7B10>]}
+
+
+============================== 14:02:34.930129 | a2da6068-9347-4445-9b4c-e2c0026ab37f ==============================
+[0m14:02:34.930129 [info ] [MainThread]: Running with dbt=1.11.6
+[0m14:02:34.931653 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Sandhya Subramaniam\\.dbt', 'invocation_command': 'dbt run --select stg_test_users_raw', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Sandhya Subramaniam\\Desktop\\akarsh\\dbt-works\\logs'}
+[0m14:02:48.086181 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002888C9F1BA0>]}
+[0m14:02:48.157046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B4FA9D00>]}
+[0m14:02:48.158241 [info ] [MainThread]: Registered adapter: bigquery=1.11.0
+[0m14:02:48.972556 [debug] [MainThread]: checksum: c8b6b59961f1a44cdae45abf5547d0e7461bf6d514dde67ea6b1b10a452c5f5b, vars: {}, profile: , target: dev, version: 1.11.6
+[0m14:02:49.128261 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:02:49.128741 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m14:02:49.129021 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:02:49.134652 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.dbt_works.analytics
+- models.dbt_works.marts
+- models.dbt_works.audit
+[0m14:02:49.169603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B4FEEE50>]}
+[0m14:02:49.245034 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\manifest.json
+[0m14:02:49.248368 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\semantic_manifest.json
+[0m14:02:49.276520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B6172D50>]}
+[0m14:02:49.277083 [info ] [MainThread]: Found 1 model, 1 source, 539 macros
+[0m14:02:49.278683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B4D09470>]}
+[0m14:02:49.280445 [info ] [MainThread]: 
+[0m14:02:49.281117 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:02:49.281592 [info ] [MainThread]: 
+[0m14:02:49.282269 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:02:49.283567 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_ak-data-warehouse'
+[0m14:02:49.284035 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:02:53.238348 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_ak-data-warehouse_dbt_akarsh_staging_layer'
+[0m14:02:53.239633 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:02:53.985756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B6422680>]}
+[0m14:02:53.986999 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:02:54.003979 [debug] [Thread-1 (]: Began running node model.dbt_works.stg_test_users_raw
+[0m14:02:54.005463 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_akarsh_staging_layer.stg_test_users_raw ........ [RUN]
+[0m14:02:54.007855 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_works.stg_test_users_raw'
+[0m14:02:54.009215 [debug] [Thread-1 (]: Began compiling node model.dbt_works.stg_test_users_raw
+[0m14:02:54.023254 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_works.stg_test_users_raw"
+[0m14:02:54.028278 [debug] [Thread-1 (]: Began executing node model.dbt_works.stg_test_users_raw
+[0m14:02:54.062784 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_works.stg_test_users_raw"
+[0m14:02:54.064517 [debug] [Thread-1 (]: On model.dbt_works.stg_test_users_raw: /* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "dbt_works", "target_name": "dev", "node_id": "model.dbt_works.stg_test_users_raw"} */
+
+
+  create or replace view `ak-data-warehouse`.`dbt_akarsh_staging_layer`.`stg_test_users_raw`
+  OPTIONS()
+  as select
+    id,
+    name,
+    created_at
+from `ak-data-warehouse`.`raw_data`.`users_raw`;
+
+
+[0m14:02:54.065102 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:02:55.047304 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=ak-data-warehouse&j=bq:US:aa1236ed-09d1-4bb7-aa52-1fd7bd53c8e0&page=queryresults
+[0m14:02:55.348894 [debug] [Thread-1 (]: SQL status: OK in 0.301 seconds
+[0m14:02:55.481758 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2da6068-9347-4445-9b4c-e2c0026ab37f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B650D6D0>]}
+[0m14:02:55.482590 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_akarsh_staging_layer.stg_test_users_raw ... [[32mCREATE VIEW (0 processed)[0m in 1.47s]
+[0m14:02:55.483571 [debug] [Thread-1 (]: Finished running node model.dbt_works.stg_test_users_raw
+[0m14:02:55.485563 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:02:55.486176 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:02:55.486467 [debug] [MainThread]: Connection 'list_ak-data-warehouse' was properly closed.
+[0m14:02:55.487064 [debug] [MainThread]: Connection 'list_ak-data-warehouse_dbt_akarsh_staging_layer' was properly closed.
+[0m14:02:55.487357 [debug] [MainThread]: Connection 'model.dbt_works.stg_test_users_raw' was properly closed.
+[0m14:02:55.487634 [info ] [MainThread]: 
+[0m14:02:55.488323 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 6.21 seconds (6.21s).
+[0m14:02:55.489349 [debug] [MainThread]: Command end result
+[0m14:02:55.517445 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\manifest.json
+[0m14:02:55.521514 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\semantic_manifest.json
+[0m14:02:55.530325 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works\target\run_results.json
+[0m14:02:55.530857 [info ] [MainThread]: 
+[0m14:02:55.531623 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:02:55.532066 [info ] [MainThread]: 
+[0m14:02:55.532619 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m14:02:55.533908 [debug] [MainThread]: Command `dbt run` succeeded at 14:02:55.533771 after 21.00 seconds
+[0m14:02:55.534374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B649D230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B64D32F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000288B64D2710>]}
+[0m14:02:55.534761 [debug] [MainThread]: Flushing usage events
+[0m14:02:56.337772 [debug] [MainThread]: An error was encountered while trying to flush usage events
