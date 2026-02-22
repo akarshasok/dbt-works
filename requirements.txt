@@ -1,0 +1,9 @@
+﻿# dbt
+dbt-bigquery==1.9.0
+
+# SQL linting
+sqlfluff==3.2.5
+sqlfluff-templater-dbt==3.2.5
+
+# YAML linting
+yamllint==1.35.1
