@@ -1,4 +1,4 @@
-﻿[sqlfluff]
+[sqlfluff]
 dialect = bigquery
 templater = dbt
 max_line_length = 120
@@ -10,6 +10,3 @@ profiles_dir = ~/.dbt
 [sqlfluff:rules]
 indent_unit = space
 tab_space_size = 2
-
-# Keep it balanced — not overly strict
-exclude_rules = L031,L034
