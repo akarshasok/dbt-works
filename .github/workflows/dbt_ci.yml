@@ -1,0 +1,52 @@
+﻿name: dbt CI (PR)
+
+on:
+  pull_request:
+
+concurrency:
+  group: dbt-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dbt-ci:
+    runs-on: ubuntu-latest
+
+    env:
+      DBT_TARGET: ci
+      GCP_PROJECT_ID: ak-data-warehouse
+      BQ_LOCATION: US
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Write GCP credentials file
+        shell: bash
+        run: |
+          echo '${{ secrets.GCP_SA_KEY_JSON }}' > /tmp/gcp_sa.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_sa.json" >> $GITHUB_ENV
+
+      - name: dbt deps
+        run: dbt deps
+
+      - name: Lint SQL (sqlfluff)
+        run: sqlfluff lint models
+
+      - name: Lint YAML (yamllint)
+        run: yamllint .
+
+      - name: dbt parse
+        run: dbt parse --target ci
+
+      - name: dbt build (ci)
+        run: dbt build --target ci
