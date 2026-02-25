@@ -37,7 +37,7 @@ jobs:
           echo '${{ secrets.GCP_SA_KEY_JSON }}' > /tmp/gcp_sa.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_sa.json" >> $GITHUB_ENV
 
-      - name: Write dbt profiles.yml (for dbt + sqlfluff dbt-templater)
+      - name: Write dbt profiles.yml (runner)
         shell: bash
         run: |
           mkdir -p ~/.dbt
@@ -65,10 +65,32 @@ jobs:
       - name: Lint YAML (yamllint)
         run: yamllint -c .yamllint .
 
-      - name: dbt parse
-        run: dbt parse --target ci
+      - name: Download main manifest (Slim CI baseline)
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: dbt_state.yml
+          branch: main
+          name: dbt-manifest
+          path: state
+          if_no_artifact_found: fail
 
-      # If you're still on free-tier/no billing, keep this exclude
-      - name: dbt build (ci)
-        run: dbt build --target ci
+      - name: Confirm baseline state exists
+        shell: bash
+        run: |
+          ls -la state
+          test -f state/manifest.json
 
+      - name: Show Slim CI selection
+        shell: bash
+        run: |
+          dbt ls --target ci --defer --state state --select state:modified+ --indirect-selection eager
+
+      - name: dbt build (Slim CI)
+        shell: bash
+        run: |
+          dbt build \
+            --target ci \
+            --defer \
+            --state state \
+            --select state:modified+ \
+            --indirect-selection eager
