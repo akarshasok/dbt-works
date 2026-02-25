@@ -1,4 +1,4 @@
-name: dbt State (main manifest)
+﻿name: dbt State (main manifest)
 
 on:
   push:
@@ -54,4 +54,5 @@ jobs:
           name: dbt-manifest
           path: target/manifest.json
           retention-days: 30
-          
+
+
