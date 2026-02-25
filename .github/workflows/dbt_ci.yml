@@ -8,7 +8,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  dbt-ci:
+  dbt_ci:
+    name: dbt CI (PR)
     runs-on: ubuntu-latest
 
     env:
@@ -53,16 +54,6 @@ jobs:
                 threads: 8
                 priority: batch
                 keyfile: /tmp/gcp_sa.json
-
-              prod:
-                type: bigquery
-                method: service-account
-                project: ak-data-warehouse
-                dataset: staging_layer
-                location: US
-                threads: 8
-                priority: batch
-                keyfile: /tmp/gcp_sa.json
           YAML
 
       - name: dbt deps
@@ -77,6 +68,7 @@ jobs:
       - name: dbt parse
         run: dbt parse --target ci
 
+      # If you're still on free-tier/no billing, keep this exclude
       - name: dbt build (ci)
         run: dbt build --target ci
 
