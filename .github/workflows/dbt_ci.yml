@@ -1,0 +1,74 @@
+﻿name: dbt CI (PR)
+
+on:
+  pull_request:
+
+concurrency:
+  group: dbt-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dbt_ci:
+    name: dbt CI (PR)
+    runs-on: ubuntu-latest
+
+    env:
+      DBT_TARGET: ci
+      GCP_PROJECT_ID: ak-data-warehouse
+      BQ_LOCATION: US
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Write GCP credentials file
+        shell: bash
+        run: |
+          echo '${{ secrets.GCP_SA_KEY_JSON }}' > /tmp/gcp_sa.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_sa.json" >> $GITHUB_ENV
+
+      - name: Write dbt profiles.yml (for dbt + sqlfluff dbt-templater)
+        shell: bash
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<'YAML'
+          dbt_works:
+            target: ci
+            outputs:
+              ci:
+                type: bigquery
+                method: service-account
+                project: ak-data-warehouse
+                dataset: dbt_ci_staging_layer
+                location: US
+                threads: 8
+                priority: batch
+                keyfile: /tmp/gcp_sa.json
+          YAML
+
+      - name: dbt deps
+        run: dbt deps
+
+      - name: Lint SQL (sqlfluff)
+        run: sqlfluff lint models
+
+      - name: Lint YAML (yamllint)
+        run: yamllint -c .yamllint .
+
+      - name: dbt parse
+        run: dbt parse --target ci
+
+      # If you're still on free-tier/no billing, keep this exclude
+      - name: dbt build (ci)
+        run: dbt build --target ci
+

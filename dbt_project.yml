@@ -15,18 +15,17 @@ clean-targets: ["target", "dbt_packages"]
 
 models:
   dbt_works:
-    staging:
-      +schema: staging_layer
-      +materialized: view
+    model_test:
+      staging:
+        +schema: staging_layer
+        +materialized: table
+      marts:
+        +schema: mart_layer
+        +materialized: table
+      analytics:
+        +schema: analytics_layer
+        +materialized: table
+      audit:
+        +schema: audit_layer
+        +materialized: table
 
-    marts:
-      +schema: mart_layer
-      +materialized: table
-
-    analytics:
-      +schema: analytics_layer
-      +materialized: table
-
-    audit:
-      +schema: audit_layer
-      +materialized: view
