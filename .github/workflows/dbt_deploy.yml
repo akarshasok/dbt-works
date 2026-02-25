@@ -82,3 +82,4 @@ jobs:
           name: dbt-manifest
           path: target/manifest.json
           retention-days: 30
+
