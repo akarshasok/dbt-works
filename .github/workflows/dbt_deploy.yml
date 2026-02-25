@@ -8,9 +8,7 @@ on:
 jobs:
   dbt-deploy:
     runs-on: ubuntu-latest
-
-    # OPTIONAL: Uncomment next line if you want approval before prod runs
-    environment: prod
+    environment: prod  # <-- this makes it require approval (via GitHub Environments)
 
     env:
       DBT_TARGET: prod
@@ -36,13 +34,14 @@ jobs:
         run: |
           echo '${{ secrets.GCP_SA_KEY_JSON }}' > /tmp/gcp_sa.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_sa.json" >> $GITHUB_ENV
-      - name: Write dbt profiles.yml
+
+      - name: Write dbt profiles.yml (for dbt + sqlfluff dbt-templater)
         shell: bash
         run: |
           mkdir -p ~/.dbt
           cat > ~/.dbt/profiles.yml <<'YAML'
           dbt_works:
-            target: ci
+            target: prod
             outputs:
               ci:
                 type: bigquery
@@ -53,6 +52,7 @@ jobs:
                 threads: 8
                 priority: batch
                 keyfile: /tmp/gcp_sa.json
+
               prod:
                 type: bigquery
                 method: service-account
@@ -63,6 +63,7 @@ jobs:
                 priority: batch
                 keyfile: /tmp/gcp_sa.json
           YAML
+
       - name: dbt deps
         run: dbt deps
 

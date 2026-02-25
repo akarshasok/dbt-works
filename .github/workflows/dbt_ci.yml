@@ -36,6 +36,35 @@ jobs:
           echo '${{ secrets.GCP_SA_KEY_JSON }}' > /tmp/gcp_sa.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_sa.json" >> $GITHUB_ENV
 
+      - name: Write dbt profiles.yml (for dbt + sqlfluff dbt-templater)
+        shell: bash
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<'YAML'
+          dbt_works:
+            target: ci
+            outputs:
+              ci:
+                type: bigquery
+                method: service-account
+                project: ak-data-warehouse
+                dataset: dbt_ci_staging_layer
+                location: US
+                threads: 8
+                priority: batch
+                keyfile: /tmp/gcp_sa.json
+
+              prod:
+                type: bigquery
+                method: service-account
+                project: ak-data-warehouse
+                dataset: staging_layer
+                location: US
+                threads: 8
+                priority: batch
+                keyfile: /tmp/gcp_sa.json
+          YAML
+
       - name: dbt deps
         run: dbt deps
 
