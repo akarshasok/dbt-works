@@ -28,3 +28,4 @@ models:
       audit:
         +schema: audit_layer
         +materialized: table
+
