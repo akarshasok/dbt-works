@@ -72,7 +72,7 @@ jobs:
         run: sqlfluff lint models
 
       - name: Lint YAML (yamllint)
-        run: yamllint .
+        run: yamllint -c .yamllint .
 
       - name: dbt parse
         run: dbt parse --target ci

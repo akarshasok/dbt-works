@@ -1,5 +1,14 @@
 ﻿extends: default
 
+ignore: |
+  dbt_packages/
+  target/
+  logs/
+  .venv/
+  **/.venv/
+  **/__pycache__/
+  **/*.egg-info/
+
 rules:
   line-length:
     max: 120
