@@ -23,3 +23,9 @@ models:
       staging:
         +schema: staging_layer
         +materialized: table
+      marts:
+        +schema: mart_layer
+        +materialized: table
+      audit:
+        +schema: audit_layer
+        +materialized: table
