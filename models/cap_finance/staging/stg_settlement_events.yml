@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: stg_settlement_events
+    description: >
+      Staged settlement events at grain (settlement_id, status), deterministically deduped by
+      settled_at desc, ingested_at desc. Adds a finance-timezone ledger_business_date, a surrogate
+      key, and a signed_net_amount where REVERSED rows flip the sign of net_amount.
+
+    columns:
+      - name: settlement_event_sk
+        description: Surrogate key for the (settlement_id, status) grain.
+        tests: [not_null, unique]
+
+      - name: settlement_id
+        description: Identifier for the settlement.
+        tests: [not_null]
+
+      - name: merchant_id
+        description: Identifier for the merchant associated with the settlement.
+        tests: [not_null]
+
+      - name: settlement_ts
+        description: Timestamp when the settlement event occurred (from settled_at).
+        tests: [not_null]
+
+      - name: ingested_at
+        description: Timestamp when the record was ingested into the raw source.
+        tests: [not_null]
+
+      - name: gross_amount
+        description: Gross settlement amount in the event currency.
+        tests: [not_null]
+
+      - name: fee_amount
+        description: Fees associated with the settlement amount in the event currency.
+        tests: [not_null]
+
+      - name: signed_net_amount
+        description: >
+          Signed net amount delta. For SETTLED it equals net_amount. For REVERSED it equals -net_amount.
+          For other statuses it is 0.
+        tests: [not_null]
+
+      - name: currency
+        description: ISO 4217 currency code for the settlement amounts.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["USD", "CAD", "GBP"]
+
+      - name: status
+        description: Settlement event status from the raw source, normalized to uppercase.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["SETTLED", "REVERSED", "PENDING", "FAILED", "CANCELLED"]
+
+      - name: ledger_business_date
+        description: Finance-timezone ledger business date derived from settlement_ts.
+        tests: [not_null]
+
+    tests:
+
+      # 1) Non-negative components sanity
+      - dbt_utils.expression_is_true:
+          expression: "gross_amount >= 0 and fee_amount >= 0"
+
+      # 2) Signed delta correctness: SETTLED is +net, REVERSED is -net
+      - dbt_utils.expression_is_true:
+          expression: |
+            (
+              (status = 'SETTLED'  and signed_net_amount > 0) or
+              (status = 'REVERSED' and signed_net_amount < 0) or
+              (status not in ('SETTLED','REVERSED') and signed_net_amount = 0)
+            )
+
+      # 3) Currency format sanity
+      - dbt_utils.expression_is_true:
+          expression: "length(currency) = 3"
+
+      # 4) Avoid obviously bad timestamps
+      - dbt_utils.expression_is_true:
+          expression: "settlement_ts >= TIMESTAMP('2000-01-01')"
