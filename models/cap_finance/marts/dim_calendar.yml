@@ -1,0 +1,88 @@
+version: 2
+
+models:
+  - name: dim_calendar
+    description: >
+      Calendar spine expanded to the reconciliation control grain using entity x currency pairs
+      observed in mart_payment_events. Provides business-day flags and period/ISO attributes for
+      consistent reporting and dense daily controls.
+      Grain: calendar_date x entity x currency.
+
+    columns:
+      - name: calendar_date
+        description: "Calendar date (daily grain)."
+        tests:
+          - not_null
+
+      - name: entity
+        description: "Legal entity (from mart_payment_events entity attribute)."
+        tests:
+          - not_null
+
+      - name: currency
+        description: "Currency (from mart_payment_events currency attribute)."
+        tests:
+          - not_null
+
+      - name: is_business_day
+        description: "Business day flag (default Mon–Fri)."
+        tests:
+          - not_null
+
+      - name: period_year
+        description: "Calendar year for standard reporting."
+        tests:
+          - not_null
+
+      - name: period_quarter
+        description: "Calendar quarter (1–4)."
+        tests:
+          - not_null
+
+      - name: period_month
+        description: "Calendar month (1–12)."
+        tests:
+          - not_null
+
+      - name: period_week
+        description: "Calendar week number as returned by EXTRACT(WEEK)."
+        tests:
+          - not_null
+
+      - name: iso_year
+        description: "ISO year (useful for week-based finance reporting across year boundaries)."
+        tests:
+          - not_null
+
+      - name: iso_week
+        description: "ISO week number (1–53)."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 53
+
+      - name: period_year_month
+        description: "Year-month rollup key formatted as YYYY-MM."
+        tests:
+          - not_null
+
+      - name: period_year_week
+        description: "ISO year-week rollup key formatted as G-WV (e.g., 2026-W08)."
+        tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - calendar_date
+            - entity
+            - currency
+
+      - dbt_utils.expression_is_true:
+          name: year_month_format_valid
+          expression: "REGEXP_CONTAINS(period_year_month, r'^[0-9]{4}-[0-9]{2}$')"
+
+      - dbt_utils.expression_is_true:
+          name: year_week_format_valid
+          expression: "REGEXP_CONTAINS(period_year_week, r'^[0-9]{4}-W[0-9]{2}$')"
