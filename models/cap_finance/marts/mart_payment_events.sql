@@ -17,7 +17,7 @@ SELECT
   s.signed_net_amount,
   m.merchant_sk,
   m.merchant_name,
-  m.legal_entity AS entity,
+  m.legal_entity,
   m.country,
   m.merchant_sk IS NULL AS is_missing_merchant_dim
 FROM {{ ref('stg_settlement_events') }} AS s

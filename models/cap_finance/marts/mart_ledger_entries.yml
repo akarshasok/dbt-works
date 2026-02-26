@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: mart_ledger_entries
+    description: >
+      Thin ledger mart. Intentionally no transforms: direct projection of stg_journal_entries.
+      Used as the canonical mart-facing ledger table for downstream reconciliation and audit models.
+    columns:
+      - name: je_line_sk
+        description: >
+          Surrogate key representing the true GL line grain.
+          Generated from (je_id, posting_date, account, entity, debit, credit, memo).
+        tests:
+          - not_null
+          - unique
+
+      - name: je_id
+        description: "Journal entry identifier from NetSuite."
+        tests:
+          - not_null
+
+      - name: posting_date
+        description: >
+          Accounting posting date assigned by the GL system.
+          Used as the business ledger date for reconciliation.
+        tests:
+          - not_null
+
+      - name: account
+        description: >
+          General ledger account code (e.g., 2100 clearing, 2999 suspense).
+          Uppercased during staging for normalization.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['2100', '2999', '1000', '4000', '6100']
+      - name: legal_entity
+        description: >
+          Legal entity responsible for the posting (e.g., US, CA, UK).
+          Normalized to uppercase during staging.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['US', 'CA', 'UK', 'GB']
+
+      - name: debit
+        description: "Debit amount for the GL line (non-negative)."
+        tests:
+          - not_null
+
+      - name: credit
+        description: "Credit amount for the GL line (non-negative)."
+        tests:
+          - not_null
+
+      - name: gl_net_movement
+        description: >
+          Net impact of the journal line computed as (credit - debit).
+          Positive values increase the clearing balance; negative values reduce it.
+        tests:
+          - not_null
+
+      - name: memo
+        description: "Free-text memo provided in the journal entry."
+
+      - name: ingested_at
+        description: >
+          Timestamp of the ingestion record selected during deterministic deduplication.
+        tests:
+          - not_null
