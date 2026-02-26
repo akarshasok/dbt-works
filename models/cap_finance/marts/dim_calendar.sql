@@ -20,7 +20,7 @@ WITH RECURSIVE
       currency
     FROM {{ ref('mart_payment_events') }}
     WHERE
-      entity IS NOT NULL
+      legal_entity IS NOT NULL
       AND currency IS NOT NULL
   )
 

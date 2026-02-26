@@ -14,7 +14,7 @@ models:
         tests:
           - not_null
 
-      - name: entity
+      - name: legal_entity
         description: "Legal entity (from mart_payment_events entity attribute)."
         tests:
           - not_null
@@ -76,7 +76,7 @@ models:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
             - calendar_date
-            - entity
+            - legal_entity
             - currency
 
       - dbt_utils.expression_is_true:
