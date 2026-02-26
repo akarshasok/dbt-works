@@ -13,7 +13,6 @@ exclude_rules = L009,L031
 project_dir = .
 profiles_dir = ~/.dbt
 profile = dbt_works
-target = dev
 target_path = target
 
 # Show real dbt errors instead of "silent" TMP
