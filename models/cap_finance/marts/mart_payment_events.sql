@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  cluster_by=['ledger_business_date', 'entity', 'currency'],
+  cluster_by=['ledger_business_date', 'legal_entity', 'currency'],
   partition_by={'field': 'ledger_business_date', 'data_type': 'date'}
 ) }}
 
