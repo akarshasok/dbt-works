@@ -1,6 +1,6 @@
 {{ config(
   materialized='table',
-  cluster_by=['calendar_date', 'entity', 'currency'],
+  cluster_by=['calendar_date', 'legal_entity', 'currency'],
   partition_by={'field': 'calendar_date', 'data_type': 'date'}
 ) }}
 
