@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_merchant_history
+    description: >
+      Promoted merchant SCD2 dimension for as-of joins.
+      Grain: merchant_id x valid_from (one version row per effective period).
+    columns:
+      - name: merchant_sk
+        tests: [not_null, unique]
+      - name: merchant_id
+        tests: [not_null]
+      - name: valid_from
+        tests: [not_null]
+      - name: valid_to
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: ['merchant_id', 'valid_from']
