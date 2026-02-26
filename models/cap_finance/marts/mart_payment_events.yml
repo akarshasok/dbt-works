@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: mart_payment_events
+    description: >
+      Settlement events enriched with merchant history as-of ledger_business_date.
+      Provides entity (legal_entity) and country so settlement totals can be aggregated at the control grain.
+      Grain: settlement_event_sk (i.e., settlement_id x status after deterministic dedupe).
+
+    columns:
+      - name: settlement_event_sk
+        tests: [not_null, unique]
+      - name: ledger_business_date
+        tests: [not_null]
+      - name: currency
+        tests: [not_null]
+      - name: signed_net_amount
+        tests: [not_null]
+      - name: is_missing_merchant_dim
+        tests: [not_null]
+
+tests:
+  - dbt_utils.expression_is_true:
+      name: no_orphan_settlements
+      expression: "is_missing_merchant_dim = FALSE"
