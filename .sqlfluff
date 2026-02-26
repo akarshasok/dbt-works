@@ -5,12 +5,13 @@ max_line_length = 120
 processes = 1
 verbosity = 0
 
-# Remove noisy rules if desired
+# Optional: remove noisy rules
 exclude_rules = L009,L031
 
 [sqlfluff:templater:dbt]
-project_dir = C:\Users\Sandhya Subramaniam\Desktop\akarsh\dbt-works
-profiles_dir = C:\Users\Sandhya Subramaniam\.dbt
+# Portable paths (works in GitHub Actions + locally)
+project_dir = .
+profiles_dir = ./.dbt
 profile = dbt_works
 target = dev
 target_path = target
@@ -18,10 +19,6 @@ target_path = target
 # Show real dbt errors instead of "silent" TMP
 dbt_skip_compilation_error = False
 
-
-# =========================
-# INDENTATION
-# =========================
 [sqlfluff:indentation]
 indent_unit = space
 tab_space_size = 2
@@ -31,10 +28,6 @@ indented_ctes = True
 indented_then = True
 indented_then_contents = True
 
-
-# =========================
-# CAPITALISATION RULES
-# =========================
 [sqlfluff:rules:capitalisation.keywords]
 capitalisation_policy = upper
 
@@ -47,40 +40,23 @@ capitalisation_policy = upper
 [sqlfluff:rules:capitalisation.literals]
 capitalisation_policy = upper
 
-
-# =========================
-# LAYOUT RULES
-# =========================
-
-# Trailing commas
 [sqlfluff:layout:type:comma]
 line_position = trailing
 
-# Leading AND / OR
 [sqlfluff:layout:type:binary_operator]
 line_position = leading
 
 [sqlfluff:layout:type:comparison_operator]
 line_position = leading
 
-# =========================
-# ALIASING RULES
-# =========================
-
-# Require table aliases
 [sqlfluff:rules:aliasing.table]
 aliasing = explicit
 
-# Require column aliases
 [sqlfluff:rules:aliasing.column]
 aliasing = explicit
 
-# Disallow ambiguous references
 [sqlfluff:rules:references.qualification]
 force_enable = True
 
-# =========================
-# JINJA / DBT FRIENDLY
-# =========================
 [sqlfluff:templater:jinja]
 apply_dbt_builtins = True
