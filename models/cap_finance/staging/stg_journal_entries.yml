@@ -38,8 +38,8 @@ models:
           - not_null
           - accepted_values:
               values: ['2100', '2999', '1000', '4000', '6100']
-
-      - name: entity
+  
+      - name: legal_entity
         description: >
           Legal entity responsible for the posting (e.g., US, CA, UK).
           Normalized to uppercase during staging.
