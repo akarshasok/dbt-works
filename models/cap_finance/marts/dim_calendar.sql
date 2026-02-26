@@ -16,7 +16,7 @@ WITH RECURSIVE
 
   entity_currency AS (
     SELECT DISTINCT
-      entity,
+      legal_entity,
       currency
     FROM {{ ref('mart_payment_events') }}
     WHERE
@@ -26,7 +26,7 @@ WITH RECURSIVE
 
 SELECT
   ds.calendar_date,
-  ec.entity,
+  ec.legal_entity,
   ec.currency,
 
   -- business day flag (Mon–Fri default)
