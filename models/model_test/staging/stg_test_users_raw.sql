@@ -1,5 +1,5 @@
-select
+SELECT
   id,
   name,
   created_at
-from {{ source('raw', 'users_raw') }}
+FROM {{ source('raw', 'users_raw') }}

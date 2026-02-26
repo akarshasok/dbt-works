@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: stg_journal_entries
+    description: >
+      Deterministically deduplicated NetSuite journal entry lines.
+      Grain: (je_id, posting_date, account, entity, debit, credit, memo).
+      Adds surrogate key and computes gl_net_movement = credit - debit.
+      Represents atomic GL posting lines used for reconciliation against settlement aggregates.
+
+    columns:
+
+      - name: je_line_sk
+        description: >
+          Surrogate key representing the true GL line grain.
+          Generated from (je_id, posting_date, account, entity, debit, credit, memo).
+        tests:
+          - not_null
+          - unique
+
+      - name: je_id
+        description: "Journal entry identifier from NetSuite."
+        tests:
+          - not_null
+
+      - name: posting_date
+        description: >
+          Accounting posting date assigned by the GL system.
+          Used as the business ledger date for reconciliation.
+        tests:
+          - not_null
+
+      - name: account
+        description: >
+          General ledger account code (e.g., 2100 clearing, 2999 suspense).
+          Uppercased during staging for normalization.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['2100', '2999', '1000', '4000', '6100']
+  
+      - name: legal_entity
+        description: >
+          Legal entity responsible for the posting (e.g., US, CA, UK).
+          Normalized to uppercase during staging.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['US', 'CA', 'UK', 'GB']
+
+      - name: debit
+        description: "Debit amount for the GL line (non-negative)."
+        tests:
+          - not_null
+
+      - name: credit
+        description: "Credit amount for the GL line (non-negative)."
+        tests:
+          - not_null
+
+      - name: gl_net_movement
+        description: >
+          Net impact of the journal line computed as (credit - debit).
+          Positive values increase the clearing balance; negative values reduce it.
+        tests:
+          - not_null
+
+      - name: memo
+        description: "Free-text memo provided in the journal entry."
+
+      - name: ingested_at
+        description: >
+          Timestamp of the ingestion record selected during deterministic deduplication.
+        tests:
+          - not_null
+
+    tests:
+
+      # Structural accounting integrity
+
+      - dbt_utils.expression_is_true:
+          name: no_double_sided_lines
+          expression: "NOT (debit <> 0 AND credit <> 0)"
+
+      - dbt_utils.expression_is_true:
+          name: non_negative_amounts
+          expression: "debit >= 0 AND credit >= 0"
+
+      - dbt_utils.expression_is_true:
+          name: movement_calculation_correct
+          expression: "gl_net_movement = (credit - debit)"
+
+      - dbt_utils.expression_is_true:
+          name: clearing_accounts_not_zero_impact
+          expression: |
+            NOT (
+              account IN ('2100', '2999')
+              AND debit = 0
+              AND credit = 0
+            )
+

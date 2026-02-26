@@ -19,13 +19,7 @@ models:
       staging:
         +schema: staging_layer
         +materialized: table
-      marts:
-        +schema: mart_layer
+    cap_finance:
+      staging:
+        +schema: staging_layer
         +materialized: table
-      analytics:
-        +schema: analytics_layer
-        +materialized: table
-      audit:
-        +schema: audit_layer
-        +materialized: table
-
