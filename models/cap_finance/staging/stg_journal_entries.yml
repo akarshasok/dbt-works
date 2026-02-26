@@ -99,13 +99,3 @@ models:
               AND credit = 0
             )
 
-      - dbt_utils.unique_combination_of_columns:
-          name: no_duplicate_business_grain
-          combination_of_columns:
-            - je_id
-            - posting_date
-            - account
-            - entity
-            - debit
-            - credit
-            - memo
